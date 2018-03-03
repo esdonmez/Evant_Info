@@ -1,0 +1,646 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{36164E05-69A2-4E31-91E9-73B8CAEC544E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Evant</RootNamespace>
+    <AssemblyName>Evant</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.1.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.1.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.1.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AdminView\AdminAddEventView.aspx" />
+    <Content Include="Views\AdminView\AdminCommentView.aspx" />
+    <Content Include="Views\AdminView\AdminEditCommentView.aspx" />
+    <Content Include="Views\AdminView\AdminEditEventView.aspx" />
+    <Content Include="Views\AdminView\AdminEditUserView.aspx" />
+    <Content Include="Views\AdminView\AdminEventView.aspx" />
+    <Content Include="Views\AdminView\AdminFriendsOperationView.aspx" />
+    <Content Include="Views\AdminView\AdminUserView.aspx" />
+    <Content Include="Views\AdminView\assets\css\bootstrap-rtl.min.css" />
+    <Content Include="Views\AdminView\assets\css\component.css" />
+    <Content Include="Views\AdminView\assets\css\core.css" />
+    <Content Include="Views\AdminView\assets\css\custombox.css" />
+    <Content Include="Views\AdminView\assets\css\fonts.css" />
+    <Content Include="Views\AdminView\assets\css\icons.css" />
+    <Content Include="Views\AdminView\assets\css\menu.css" />
+    <Content Include="Views\AdminView\assets\css\pages.css" />
+    <Content Include="Views\AdminView\assets\css\responsive.css" />
+    <Content Include="Views\AdminView\assets\images\add.png" />
+    <Content Include="Views\AdminView\assets\images\arrow.gif" />
+    <Content Include="Views\AdminView\assets\images\bg.jpg" />
+    <Content Include="Views\AdminView\assets\images\botleft.jpg" />
+    <Content Include="Views\AdminView\assets\images\botright.jpg" />
+    <Content Include="Views\AdminView\assets\images\bt_blue_center.gif" />
+    <Content Include="Views\AdminView\assets\images\bt_blue_left.gif" />
+    <Content Include="Views\AdminView\assets\images\bt_blue_r.gif" />
+    <Content Include="Views\AdminView\assets\images\bt_green_center.gif" />
+    <Content Include="Views\AdminView\assets\images\bt_green_left.gif" />
+    <Content Include="Views\AdminView\assets\images\bt_green_r.gif" />
+    <Content Include="Views\AdminView\assets\images\bt_red_center.gif" />
+    <Content Include="Views\AdminView\assets\images\bt_red_left.gif" />
+    <Content Include="Views\AdminView\assets\images\bt_red_r.gif" />
+    <Content Include="Views\AdminView\assets\images\bubble.png" />
+    <Content Include="Views\AdminView\assets\images\button.png" />
+    <Content Include="Views\AdminView\assets\images\buttonn.png" />
+    <Content Include="Views\AdminView\assets\images\buttony.png" />
+    <Content Include="Views\AdminView\assets\images\comment.png" />
+    <Content Include="Views\AdminView\assets\images\delete.png" />
+    <Content Include="Views\AdminView\assets\images\edit.png" />
+    <Content Include="Views\AdminView\assets\images\error.png" />
+    <Content Include="Views\AdminView\assets\images\footer_bg.jpg" />
+    <Content Include="Views\AdminView\assets\images\green_bt.gif" />
+    <Content Include="Views\AdminView\assets\images\green_bt_a.gif" />
+    <Content Include="Views\AdminView\assets\images\help.png" />
+    <Content Include="Views\AdminView\assets\images\indeziner_logo.gif" />
+    <Content Include="Views\AdminView\assets\images\info.png" />
+    <Content Include="Views\AdminView\assets\images\left.jpg" />
+    <Content Include="Views\AdminView\assets\images\list_bullet.gif" />
+    <Content Include="Views\AdminView\assets\images\login_bg.png" />
+    <Content Include="Views\AdminView\assets\images\logo.gif" />
+    <Content Include="Views\AdminView\assets\images\menu_bg.gif" />
+    <Content Include="Views\AdminView\assets\images\menu_bg.jpg" />
+    <Content Include="Views\AdminView\assets\images\menu_bg_a.gif" />
+    <Content Include="Views\AdminView\assets\images\minus.gif" />
+    <Content Include="Views\AdminView\assets\images\notice.png" />
+    <Content Include="Views\AdminView\assets\images\photo.png" />
+    <Content Include="Views\AdminView\assets\images\plus.gif" />
+    <Content Include="Views\AdminView\assets\images\red_bt.gif" />
+    <Content Include="Views\AdminView\assets\images\red_bt_a.gif" />
+    <Content Include="Views\AdminView\assets\images\right.jpg" />
+    <Content Include="Views\AdminView\assets\images\search.png" />
+    <Content Include="Views\AdminView\assets\images\sidebar_box_bottom.gif" />
+    <Content Include="Views\AdminView\assets\images\sidebar_box_top.gif" />
+    <Content Include="Views\AdminView\assets\images\sidebar_menu_top.gif" />
+    <Content Include="Views\AdminView\assets\images\sidebar_menu_top_a.gif" />
+    <Content Include="Views\AdminView\assets\images\trash.png" />
+    <Content Include="Views\AdminView\assets\images\user_edit.png" />
+    <Content Include="Views\AdminView\assets\images\user_logout.png" />
+    <Content Include="Views\AdminView\assets\images\valid.png" />
+    <Content Include="Views\AdminView\assets\images\warning.png" />
+    <Content Include="Views\AdminView\assets\img\0.png" />
+    <Content Include="Views\AdminView\assets\img\button-left.gif" />
+    <Content Include="Views\AdminView\assets\img\button-left.png" />
+    <Content Include="Views\AdminView\assets\img\button-right.gif" />
+    <Content Include="Views\AdminView\assets\img\button-right.png" />
+    <Content Include="Views\AdminView\assets\img\button.gif" />
+    <Content Include="Views\AdminView\assets\img\button.png" />
+    <Content Include="Views\AdminView\assets\img\checkbox.gif" />
+    <Content Include="Views\AdminView\assets\img\checkbox.png" />
+    <Content Include="Views\AdminView\assets\img\file.gif" />
+    <Content Include="Views\AdminView\assets\img\file.png" />
+    <Content Include="Views\AdminView\assets\img\input-left.gif" />
+    <Content Include="Views\AdminView\assets\img\input-left.png" />
+    <Content Include="Views\AdminView\assets\img\input-right.gif" />
+    <Content Include="Views\AdminView\assets\img\input-right.png" />
+    <Content Include="Views\AdminView\assets\img\input.gif" />
+    <Content Include="Views\AdminView\assets\img\input.png" />
+    <Content Include="Views\AdminView\assets\img\radio.gif" />
+    <Content Include="Views\AdminView\assets\img\radio.png" />
+    <Content Include="Views\AdminView\assets\img\select-left.gif" />
+    <Content Include="Views\AdminView\assets\img\select-left.png" />
+    <Content Include="Views\AdminView\assets\img\select-right.gif" />
+    <Content Include="Views\AdminView\assets\img\select-right.png" />
+    <Content Include="Views\AdminView\assets\img\textarea-bl.gif" />
+    <Content Include="Views\AdminView\assets\img\textarea-bl.png" />
+    <Content Include="Views\AdminView\assets\img\textarea-br.gif" />
+    <Content Include="Views\AdminView\assets\img\textarea-br.png" />
+    <Content Include="Views\AdminView\assets\img\textarea-l-off.gif" />
+    <Content Include="Views\AdminView\assets\img\textarea-l-off.png" />
+    <Content Include="Views\AdminView\assets\img\textarea-l-over.png" />
+    <Content Include="Views\AdminView\assets\img\textarea-r-off.gif" />
+    <Content Include="Views\AdminView\assets\img\textarea-r-off.png" />
+    <Content Include="Views\AdminView\assets\img\textarea-r-over.png" />
+    <Content Include="Views\AdminView\assets\img\textarea-tl.gif" />
+    <Content Include="Views\AdminView\assets\img\textarea-tl.png" />
+    <Content Include="Views\AdminView\assets\img\textarea-tr.gif" />
+    <Content Include="Views\AdminView\assets\img\textarea-tr.png" />
+    <Content Include="Views\AdminView\assets\js\analytics.js" />
+    <Content Include="Views\AdminView\assets\js\bootstrap-rtl.min.js" />
+    <Content Include="Views\AdminView\assets\js\custombox.min.js" />
+    <Content Include="Views\AdminView\assets\js\fastclick.js" />
+    <Content Include="Views\AdminView\assets\js\jquery.app.js" />
+    <Content Include="Views\AdminView\assets\js\jquery.blockUI.js" />
+    <Content Include="Views\AdminView\assets\js\jquery.core.js" />
+    <Content Include="Views\AdminView\assets\js\jquery.min.js" />
+    <Content Include="Views\AdminView\assets\js\jquery.nicescroll.js" />
+    <Content Include="Views\AdminView\assets\js\jquery.scrollTo.min.js" />
+    <Content Include="Views\AdminView\assets\js\jquery.slimscroll.js" />
+    <Content Include="Views\AdminView\assets\js\legacy.min.js" />
+    <Content Include="Views\AdminView\assets\js\modernizr.min.js" />
+    <Content Include="Views\AdminView\assets\js\waves.js" />
+    <Content Include="Views\AdminView\assets\js\wow.min.js" />
+    <Content Include="Views\assets\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Views\assets\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Views\assets\bootstrap\css\bootstrap.css" />
+    <Content Include="Views\assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Views\assets\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Views\assets\bootstrap\js\bootstrap.js" />
+    <Content Include="Views\assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Views\assets\bootstrap\js\npm.js" />
+    <Content Include="Views\assets\css\13b05fc88db3111b0a5d301fc6277bac.css" />
+    <Content Include="Views\assets\css\324126ba038df058cafbb43622b7782f.css" />
+    <Content Include="Views\assets\css\6410393f658a3d3764d50fdb188484f3.css" />
+    <Content Include="Views\assets\css\7d4ab1dbab9a5b52681ade50cafe5c64.css" />
+    <Content Include="Views\assets\css\bd07c408bfef651b19975048a2a46157.css" />
+    <Content Include="Views\assets\css\custom.css" />
+    <Content Include="Views\assets\css\eade76af5576bdd9e5578a47a975d4dc.css" />
+    <Content Include="Views\assets\css\fonts.css" />
+    <Content Include="Views\assets\css\form-elements.css" />
+    <Content Include="Views\assets\css\jquery-ui.min.css" />
+    <Content Include="Views\assets\css\style.css" />
+    <Content Include="Views\assets\font-awesome\css\font-awesome.css" />
+    <Content Include="Views\assets\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Views\assets\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Views\assets\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Views\assets\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="Views\assets\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="Views\assets\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="Views\assets\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="Views\assets\ico\favicon.png" />
+    <Content Include="Views\assets\img\arrow-curved.png" />
+    <Content Include="Views\assets\img\backgrounds\1.jpg" />
+    <Content Include="Views\assets\img\backgrounds\2.jpg" />
+    <Content Include="Views\assets\img\backgrounds\background.jpg" />
+    <Content Include="Views\assets\img\backgrounds\video.mp4" />
+    <Content Include="Views\assets\img\bell.png" />
+    <Content Include="Views\assets\img\evant-logo-smallw.png" />
+    <Content Include="Views\assets\img\evant-small.png" />
+    <Content Include="Views\assets\img\event-background\competition.jpg" />
+    <Content Include="Views\assets\img\event-background\fair.jpg" />
+    <Content Include="Views\assets\img\event-background\festival.jpg" />
+    <Content Include="Views\assets\img\event-background\food.jpg" />
+    <Content Include="Views\assets\img\event-background\music.jpg" />
+    <Content Include="Views\assets\img\event-background\travel.jpg" />
+    <Content Include="Views\assets\img\events.png" />
+    <Content Include="Views\assets\img\user-profile.jpg" />
+    <Content Include="Views\assets\img\user.png" />
+    <Content Include="Views\assets\js\CSSPlugin.min.js" />
+    <Content Include="Views\assets\js\jquery-1.11.1.js" />
+    <Content Include="Views\assets\js\jquery-1.11.1.min.js" />
+    <Content Include="Views\assets\js\jquery-1.12.4.js" />
+    <Content Include="Views\assets\js\jquery-migrate-1.4.1.min.js" />
+    <Content Include="Views\assets\js\jquery.backstretch.js" />
+    <Content Include="Views\assets\js\jquery.backstretch.min.js" />
+    <Content Include="Views\assets\js\main.js" />
+    <Content Include="Views\assets\js\placeholder.js" />
+    <Content Include="Views\assets\js\scripts.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\assets\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Views\assets\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Views\assets\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Views\assets\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Views\assets\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Views\assets\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\assets\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Views\assets\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Views\assets\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Views\assets\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Views\assets\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Views\assets\font-awesome\less\animated.less" />
+    <Content Include="Views\assets\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Views\assets\font-awesome\less\core.less" />
+    <Content Include="Views\assets\font-awesome\less\fixed-width.less" />
+    <Content Include="Views\assets\font-awesome\less\font-awesome.less" />
+    <Content Include="Views\assets\font-awesome\less\icons.less" />
+    <Content Include="Views\assets\font-awesome\less\larger.less" />
+    <Content Include="Views\assets\font-awesome\less\list.less" />
+    <Content Include="Views\assets\font-awesome\less\mixins.less" />
+    <Content Include="Views\assets\font-awesome\less\path.less" />
+    <Content Include="Views\assets\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Views\assets\font-awesome\less\stacked.less" />
+    <Content Include="Views\assets\font-awesome\less\variables.less" />
+    <Content Include="Views\assets\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Views\assets\font-awesome\scss\_animated.scss" />
+    <Content Include="Views\assets\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Views\assets\font-awesome\scss\_core.scss" />
+    <Content Include="Views\assets\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Views\assets\font-awesome\scss\_icons.scss" />
+    <Content Include="Views\assets\font-awesome\scss\_larger.scss" />
+    <Content Include="Views\assets\font-awesome\scss\_list.scss" />
+    <Content Include="Views\assets\font-awesome\scss\_mixins.scss" />
+    <Content Include="Views\assets\font-awesome\scss\_path.scss" />
+    <Content Include="Views\assets\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Views\assets\font-awesome\scss\_stacked.scss" />
+    <Content Include="Views\assets\font-awesome\scss\_variables.scss" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Views\AddEventView.aspx" />
+    <Content Include="Views\assets\js\ScrollToPlugin.min.js" />
+    <Content Include="Views\assets\js\TweenLite.min.js" />
+    <Content Include="Views\EventDetailsView.aspx" />
+    <Content Include="Views\EventsView.aspx" />
+    <Content Include="Views\HomeView.aspx" />
+    <Content Include="Views\PersonView.aspx" />
+    <Content Include="Views\ProfileView.aspx" />
+    <Content Include="Views\LoginView.aspx" />
+    <Content Include="Views\RegisterView.aspx" />
+    <Content Include="Views\SettingsView.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\AdminView\assets\images\Thumbs.db" />
+    <Content Include="Views\AdminView\assets\img\Thumbs.db" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Views\AddEventView.aspx.cs">
+      <DependentUpon>AddEventView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AddEventView.aspx.designer.cs">
+      <DependentUpon>AddEventView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminView\AdminAddEventView.aspx.cs">
+      <DependentUpon>AdminAddEventView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdminView\AdminAddEventView.aspx.designer.cs">
+      <DependentUpon>AdminAddEventView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminView\AdminCommentView.aspx.cs">
+      <DependentUpon>AdminCommentView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdminView\AdminCommentView.aspx.designer.cs">
+      <DependentUpon>AdminCommentView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminView\AdminEditCommentView.aspx.cs">
+      <DependentUpon>AdminEditCommentView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdminView\AdminEditCommentView.aspx.designer.cs">
+      <DependentUpon>AdminEditCommentView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminView\AdminEditEventView.aspx.cs">
+      <DependentUpon>AdminEditEventView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdminView\AdminEditEventView.aspx.designer.cs">
+      <DependentUpon>AdminEditEventView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminView\AdminEditUserView.aspx.cs">
+      <DependentUpon>AdminEditUserView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdminView\AdminEditUserView.aspx.designer.cs">
+      <DependentUpon>AdminEditUserView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminView\AdminEventView.aspx.cs">
+      <DependentUpon>AdminEventView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdminView\AdminEventView.aspx.designer.cs">
+      <DependentUpon>AdminEventView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminView\AdminFriendsOperationView.aspx.cs">
+      <DependentUpon>AdminFriendsOperationView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdminView\AdminFriendsOperationView.aspx.designer.cs">
+      <DependentUpon>AdminFriendsOperationView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminView\AdminUserView.aspx.cs">
+      <DependentUpon>AdminUserView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdminView\AdminUserView.aspx.designer.cs">
+      <DependentUpon>AdminUserView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventDetailsView.aspx.cs">
+      <DependentUpon>EventDetailsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EventDetailsView.aspx.designer.cs">
+      <DependentUpon>EventDetailsView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventsView.aspx.cs">
+      <DependentUpon>EventsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EventsView.aspx.designer.cs">
+      <DependentUpon>EventsView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomeView.aspx.cs">
+      <DependentUpon>HomeView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\HomeView.aspx.designer.cs">
+      <DependentUpon>HomeView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PersonView.aspx.cs">
+      <DependentUpon>PersonView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PersonView.aspx.designer.cs">
+      <DependentUpon>PersonView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProfileView.aspx.cs">
+      <DependentUpon>ProfileView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ProfileView.aspx.designer.cs">
+      <DependentUpon>ProfileView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.aspx.cs">
+      <DependentUpon>LoginView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\LoginView.aspx.designer.cs">
+      <DependentUpon>LoginView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterView.aspx.cs">
+      <DependentUpon>RegisterView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\RegisterView.aspx.designer.cs">
+      <DependentUpon>RegisterView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsView.aspx.cs">
+      <DependentUpon>SettingsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SettingsView.aspx.designer.cs">
+      <DependentUpon>SettingsView.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Evant.BAL\Evant.BAL.csproj">
+      <Project>{56083f94-a47c-4bc2-849a-7c9427aa92ba}</Project>
+      <Name>Evant.BAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evant.BO\Evant.BO.csproj">
+      <Project>{afec5c83-a99f-4f72-9e6b-005c928a3ca9}</Project>
+      <Name>Evant.BO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>32744</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:32744/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

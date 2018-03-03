@@ -1,0 +1,172 @@
+﻿.menu-item i._mi,.menu-item
+img._mi {
+	display:inline-block;
+	vertical-align:middle
+}
+.menu-item
+i._mi {
+	margin-top:-.265em;
+	width:auto;
+	height:auto;
+	font-size:1.2em;
+	line-height:1
+}
+.menu-item i._before,.rtl .menu-item
+i._after {
+	margin-right:.25em
+}
+.menu-item i._after,.rtl .menu-item
+i._before {
+	margin-left:.25em
+}
+.menu-item img._before,.rtl .menu-item
+img._after {
+	margin-right:.5em
+}
+.menu-item img._after,.rtl .menu-item
+img._before {
+	margin-left:.5em
+}
+.menu-item
+._svg {
+	width:1em
+}
+.rtl .menu-item
+i._before {
+	margin-right:0
+}
+.rtl .menu-item
+i._after {
+	margin-left:0
+}
+.visuallyhidden {
+	border:0;
+	clip:rect(0 0 0 0);
+	height:1px;
+	margin:-1px;
+	overflow:hidden;
+	padding:0;
+	position:absolute;
+	width:1px
+}
+.menu-item
+i.elusive {
+	margin-top:-.3em
+}
+.dashicons-admin-site:before {
+	content:"\f319"!important
+}
+.dashicons-welcome-view-site:before {
+	content:"\f115"!important
+}
+#job-manager-bookmarks table ul.job-manager-bookmark-actions {
+	margin:0;
+	padding:0;
+	visibility:hidden;
+	font-size:.92em
+}
+#job-manager-bookmarks table ul.job-manager-bookmark-actions
+li {
+	float:none;
+	display:inline;
+	padding:0;
+	margin:0
+.5em 0 0;
+	font-weight:400;
+	list-style:none outside
+}
+#job-manager-bookmarks table ul.job-manager-bookmark-actions li:after {
+	padding:0
+0 0 .5em;
+	content:"\2023"
+}
+#job-manager-bookmarks table ul.job-manager-bookmark-actions li:last-child:after {
+	content:''
+}
+#job-manager-bookmarks table ul.job-manager-bookmark-actions li .job-manager-bookmark-action-delete {
+	color:red
+}
+#job-manager-bookmarks table tr:focus ul.job-manager-bookmark-actions,#job-manager-bookmarks table tr:hover ul.job-manager-bookmark-actions {
+	visibility:visible
+}
+ul.job_listings .listing-bookmarked h3::before,ul.resumes .listing-bookmarked h3::before {
+	float:right;
+	content:"\e81e";
+	display:inline-block;
+	width:16px;
+	height:16px;
+	-webkit-font-smoothing:antialiased;
+	font-family:job-manager!important;
+	text-decoration:none;
+	font-weight:400;
+	font-style:normal;
+	vertical-align:top;
+	font-size:16px;
+	margin:0
+0 0 .5em;
+	*overflow:auto;
+	*zoom:1;
+	*display:inline;
+	color:red
+}
+.wp-job-manager-bookmarks-form {
+	margin:2em
+0;
+	overflow:hidden;
+	border:1px
+solid #eee;
+	border-bottom-width:2px
+}
+.wp-job-manager-bookmarks-form a.bookmark-notice {
+	margin:0;
+	display:inline-block;
+	padding:1em;
+	text-decoration:none
+}
+.wp-job-manager-bookmarks-form a.bookmark-notice::before {
+	content:"\e81f";
+	display:inline-block;
+	width:16px;
+	height:16px;
+	-webkit-font-smoothing:antialiased;
+	font-family:job-manager!important;
+	text-decoration:none;
+	font-weight:400;
+	font-style:normal;
+	vertical-align:top;
+	font-size:16px;
+	margin:0
+2px 0 0;
+	*overflow:auto;
+	*zoom:1;
+	*display:inline
+}
+.wp-job-manager-bookmarks-form a.bookmark-notice.bookmarked::before {
+	content:"\e81e"
+}
+.wp-job-manager-bookmarks-form a.remove-bookmark {
+	float:right;
+	color:red;
+	padding:1em;
+	visibility:hidden
+}
+.wp-job-manager-bookmarks-form:focus a.remove-bookmark,.wp-job-manager-bookmarks-form:hover a.remove-bookmark {
+	visibility:visible
+}
+.wp-job-manager-bookmarks-form div.bookmark-details {
+	display:none;
+	padding:0
+1em
+}
+.wp-job-manager-bookmarks-form div.bookmark-details
+p {
+	margin:0
+0 1em
+}
+.wp-job-manager-bookmarks-form div.bookmark-details
+textarea {
+	width:100%;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box
+}
